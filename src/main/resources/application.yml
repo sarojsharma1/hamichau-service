@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: hami-chau
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: c##hamichhau
+    password: hami
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+  mvc:
+    servlet:
+      path: /hamichau
+
+server:
+  port: 8081
