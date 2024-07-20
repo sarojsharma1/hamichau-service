@@ -1,6 +1,6 @@
 package com.mindassist.hami_chau.service;
 
-import com.mindassist.hami_chau.object.dto.UploadFileInfo;
+import com.mindassist.hami_chau.object.dto.UploadFileInfoDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +22,7 @@ public class FileUploadService {
                 .append(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()))
                 .append(file.getOriginalFilename()).toString();
 
-        UploadFileInfo uploadFileInfo = UploadFileInfo.builder()
+        UploadFileInfoDto uploadFileInfoDto = UploadFileInfoDto.builder()
                 .fileName(file.getOriginalFilename())
                 .fileSize(file.getSize())
                 .contentType(file.getContentType())

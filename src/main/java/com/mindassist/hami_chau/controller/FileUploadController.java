@@ -1,6 +1,7 @@
 package com.mindassist.hami_chau.controller;
 
 import com.mindassist.hami_chau.service.FileUploadService;
+import com.mindassist.hami_chau.util.TimeUtility;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class FileUploadController {
     @Autowired
     private final FileUploadService fileUploadService;
 
-//    @ResponseStatus()
+    //    @ResponseStatus()
     @PostMapping("")
     public String upload(@RequestParam("file") MultipartFile file) throws IOException {
         //test file name null or not if user donot upload any thing
@@ -28,5 +29,10 @@ public class FileUploadController {
             this.fileUploadService.handleFileUpload(file);
             return "Success";
         }
+    }
+
+    @PostMapping("/test")
+    public void Test() {
+        TimeUtility.formatDate();
     }
 }

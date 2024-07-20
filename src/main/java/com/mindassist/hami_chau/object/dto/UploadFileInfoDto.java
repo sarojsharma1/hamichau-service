@@ -9,7 +9,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UploadFileInfo {
+public class UploadFileInfoDto {
     String fileName;
     long fileSize;
     String contentType;
